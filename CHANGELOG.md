@@ -7,6 +7,8 @@ and the app uses [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.0] — 2026-11-12
+
 ### Added
 
 **The reference extension for queued embedding and permission-filtered
@@ -66,3 +68,4 @@ Six tools, one agent, two doctypes, no flow.
   bypasses Frappe's permission engine. The rule is load-bearing and was not
   weakened — the parameter was renamed, which is also the more honest name,
   since it is text to search *by* rather than a query to *run*.
+

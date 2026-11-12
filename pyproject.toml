@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "semantic-search-mcp"
-version = "0.0.0"
+version = "0.1.0"
 description = "Find records by meaning — the reference extension for queued embedding, permission-filtered retrieval and a complete index lifecycle."
 readme = "README.md"
 requires-python = ">=3.10"
