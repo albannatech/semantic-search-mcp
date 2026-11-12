@@ -1,0 +1,28 @@
+{
+  "actions": [],
+  "creation": "2026-11-12 00:00:00",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": ["vector_store", "embedding_model", "fields_by_doctype", "excluded_fields", "max_candidates"],
+  "fields": [
+    {"fieldname": "vector_store", "fieldtype": "Data", "label": "Vector Store"},
+    {"fieldname": "embedding_model", "fieldtype": "Data", "label": "Embedding Model"},
+    {"description": "One line per DocType: <code>Customer: customer_name, territory</code>. Empty until an operator writes it — a field nobody chose is not indexed.", "fieldname": "fields_by_doctype", "fieldtype": "Small Text", "label": "Fields By DocType"},
+    {"description": "One fieldname per line. Never embedded, whatever else is configured.", "fieldname": "excluded_fields", "fieldtype": "Small Text", "label": "Excluded Fields"},
+    {"default": "200", "description": "How many candidates one search pulls before filtering. Bounded, because the filter runs per candidate.", "fieldname": "max_candidates", "fieldtype": "Int", "label": "Max Candidates"}
+  ],
+  "index_web_pages_for_search": 1,
+  "issingle": 1,
+  "links": [],
+  "modified": "2026-11-12 00:00:00",
+  "modified_by": "Administrator",
+  "module": "Semantic Search MCP",
+  "name": "Semantic Search MCP Settings",
+  "owner": "Administrator",
+  "permissions": [{"create": 1, "delete": 1, "email": 1, "print": 1, "read": 1, "role": "System Manager", "share": 1, "write": 1}],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

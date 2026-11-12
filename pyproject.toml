@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "semantic-search-mcp"
+version = "0.0.0"
+description = "Find records by meaning — the reference extension for queued embedding, permission-filtered retrieval and a complete index lifecycle."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Albanna Software Solutions", email = "ahmedalbanna966@gmail.com" }]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+include = ["semantic_search_mcp*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "../albanna-ai-chat"]
+addopts = "-q"

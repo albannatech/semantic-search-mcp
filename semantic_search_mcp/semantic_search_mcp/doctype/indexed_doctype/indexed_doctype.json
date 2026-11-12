@@ -1,0 +1,30 @@
+{
+  "actions": [],
+  "creation": "2026-11-12 00:00:00",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": ["doctype_name", "fields", "model_version", "record_count", "indexed_on"],
+  "fields": [
+    {"fieldname": "doctype_name", "fieldtype": "Link", "in_list_view": 1, "label": "DocType", "options": "DocType"},
+    {"description": "The fields this index embeds. A field nobody chose is not indexed.", "fieldname": "fields", "fieldtype": "Small Text", "in_list_view": 1, "label": "Fields"},
+    {"description": "Recorded with every vector, so a model change is visible rather than silent.", "fieldname": "model_version", "fieldtype": "Data", "label": "Model Version"},
+    {"fieldname": "record_count", "fieldtype": "Int", "label": "Record Count"},
+    {"fieldname": "indexed_on", "fieldtype": "Datetime", "label": "Indexed On"}
+  ],
+  "index_web_pages_for_search": 1,
+  "links": [],
+  "modified": "2026-11-12 00:00:00",
+  "modified_by": "Administrator",
+  "module": "Semantic Search MCP",
+  "name": "Indexed DocType",
+  "owner": "Administrator",
+  "permissions": [
+    {"create": 1, "delete": 1, "email": 1, "print": 1, "read": 1, "role": "Semantic Search MCP User", "share": 1, "write": 1},
+    {"create": 1, "delete": 1, "email": 1, "print": 1, "read": 1, "role": "System Manager", "share": 1, "write": 1}
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}
