@@ -142,11 +142,25 @@ class TestRequiresCore:
     def test_it_declares_one(self):
         assert manifest.REQUIRES_CORE
 
-    def test_the_lower_bound_is_the_first_core_with_the_async_primitive(self):
-        assert manifest.REQUIRES_CORE.startswith(">=0.3.0")
+    def test_the_lower_bound_is_at_least_the_first_core_with_the_primitives(self):
+        # 0.3.0 is where the four primitives landed.  The bound moves up as the
+        # core does; what must not happen is a bound *below* the first core
+        # that can load this extension.
+        lower = manifest.REQUIRES_CORE.split(",")[0].lstrip(">=").strip()
+        assert tuple(int(p) for p in lower.split(".")) >= (0, 3, 0), (
+            f"lower bound {lower} is below the first core with the primitives"
+        )
 
     def test_the_upper_bound_pins_the_minor(self):
-        assert manifest.REQUIRES_CORE.endswith("<0.4.0")
+        # Pre-1.0, pinning to the minor is the honest declaration: a pre-1.0
+        # core may change any part of its contract in a minor release.
+        upper = manifest.REQUIRES_CORE.split(",")[-1].lstrip("<").strip()
+        parts = upper.split(".")
+        assert len(parts) == 3 and parts[2] == "0", (
+            f"upper bound {upper} does not pin the minor — a pre-1.0 core may "
+            "change its contract in a minor release, so the bound must fall on "
+            "a minor boundary"
+        )
 
 
 # --------------------------------------------------------------------------

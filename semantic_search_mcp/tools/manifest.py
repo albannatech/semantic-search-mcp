@@ -238,4 +238,4 @@ TIERS = {
 #: never an inline call in a document hook.  An earlier core has no such
 #: primitive, so declaring a lower bound below 0.3.0 would promise a
 #: compatibility that cannot exist.
-REQUIRES_CORE = ">=0.3.0,<0.4.0"
+REQUIRES_CORE = ">=0.4.0,<0.5.0"
