@@ -7,6 +7,8 @@ and the app uses [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.1] — 2026-11-12
+
 ### Fixed
 
 **`REQUIRES_CORE` bumped to `>=0.4.0,<0.5.0`.**
@@ -18,6 +20,7 @@ refused its activation. The gate was right and the declaration was stale.
 The new bound is earned rather than asserted: this extension's tests import the
 real core and run its manifest through the core's own validator, and they pass
 against 0.4.0.
+
 ## [0.1.0] — 2026-11-12
 
 ### Added
