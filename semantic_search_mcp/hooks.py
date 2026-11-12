@@ -41,8 +41,6 @@ app_description = (
 app_email = "ahmedalbanna966@gmail.com"
 app_license = "mit"
 
-# This extension contributes tools to the core, so the core must be present.
-required_apps = ["albanna_ai_chat"]
 
 # --------------------------------------------------------------------------
 # The extension seam.

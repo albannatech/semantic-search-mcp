@@ -15,17 +15,20 @@ from __future__ import annotations
 
 import frappe
 
+CORE_APP = "albanna_ai_chat"
 ROLE = "Semantic Search MCP User"
 SETTINGS = "Semantic Search MCP Settings"
 
 
 def after_install() -> None:
+    _require_core()
     _ensure_role()
     _ensure_settings()
 
 
 def after_migrate() -> None:
     """Called on every migrate, so a restored site repairs itself."""
+    _require_core()
     _ensure_role()
     _ensure_settings()
 
@@ -65,3 +68,19 @@ def _ensure_settings() -> None:
             "max_candidates": 200,
         }
     ).insert(ignore_permissions=True)
+
+
+def _require_core() -> None:
+    """Refuse to install without the core, and say which app to install.
+
+    A raised exception here fails the install, which is correct: an extension
+    whose tools cannot be discovered is not an extension, it is a directory.
+    """
+    if CORE_APP in frappe.get_installed_apps():
+        return
+    frappe.throw(
+        f"This extension requires the frappe-mcp core. Install it first: "
+        f"bench get-app https://github.com/albannatech/albanna-ai-chat.git "
+        f"&& bench --site {{site}} install-app {{CORE_APP}}",
+        title="Missing required app",
+    )
